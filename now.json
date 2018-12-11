@@ -1,0 +1,18 @@
+{
+    "version": 2,
+    "env": {
+      "FIGMA_TOKEN": "YOUR FIGMA TOKEN HERE",
+      "FIGMA_FILE": "YOUR FIGMA FILE ID HERE"
+    },
+    "builds": [
+        { "src": "www/package.json", "use": "@now/next" },
+        { "src": "api/portfolio/projects.js", "use": "@now/node" },
+        { "src": "api/portfolio/project.js", "use": "@now/node" }
+    ],
+    "routes": [
+        { "src": "/api/portfolio/projects", "dest": "/api/portfolio/projects.js" },
+        { "src": "^/api/portfolio/projects/(?<name>[^/]*)", "dest": "/api/portfolio/project.js?name=$name" },
+        { "src": "^/project/(?<id>[^/]*)", "dest": "/www/project?id=$id" },
+        { "src": "/(.*)", "dest": "/www/$1" }
+    ]
+}

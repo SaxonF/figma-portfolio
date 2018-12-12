@@ -21,7 +21,7 @@ const Index = (props) => {
     <Container>
       <FadeIn>
         <Paragraph mb={5} mt={6}>
-          I love to design, develop, and teach. I work as the Experience Design Director for Minecraft, and specialize in product design, data, and critical thinking.
+          If you're a designer who uses Figma, needs a portfolio, and wants to learn a fun new technology stack then you may find this project interesting.
         </Paragraph>
       </FadeIn>
       <Projects projects={projects} onProjectHover={onProjectHover}/>

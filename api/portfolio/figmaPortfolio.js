@@ -111,7 +111,9 @@ class FigmaPortfolio {
   }
 
   async _projectComments(project) {
-    const comments = (await this.client.comments(this.file)).data.comments.map(comment => Comment(comment));
+    const comments = (await this.client.comments(this.file)).data.comments
+      .filter(comment => comment.client_meta !== null)
+      .map(comment => Comment(comment));
     const screenNodeIds = getScreenNodes(project);
     let filteredComments = [];
     comments.forEach(comment => {

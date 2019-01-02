@@ -35,7 +35,6 @@ Index.getInitialProps = async ({req}) => {
   const baseUrl = `https://${url}/api/portfolio/projects`
   const projects = await cachedFetch(baseUrl)
   return { projects, isServerRendered, baseUrl }
-  // return { projects: [{name: "National Geographic", id: "3", background:"#1100DE"}, {name: "Ueno", id: "3", background: "#aaa"}, {name: "Twitter", id: "3", background:  "#FFD300"}] }
 }
 
 export default Index
